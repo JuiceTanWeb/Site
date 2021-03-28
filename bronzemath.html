@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>The Plant Camp Professor Site</title>
+<link rel='icon' href='resources/favicon.ico' type='image/x-icon'/ >
+ <meta charset="UTF-8"> 
+ <style> 
+ body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+body{
+	background-color: lightgreen
+
+}
+#footer {
+      bottom: 1px;
+      position: absolute;
+      text-align: center;
+}
+#footer div {
+      height: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      width: 100px;
+}
+
+.hr{
+	background-color: #000000;
+
+	border: 1px solid #000000;
+
+	height: 5px;
+
+	margin: 10px 0;
+
+	width: 760px;
+
+	}
+
+p{
+	font-family: monospace;
+}
+
+button{
+	padding: 25px 50px 25px 50px
+	color: yellow;
+ border: 1px solid #000000;
+  background-color: #FFE35A;
+}
+h1{
+	font-size: 4em;
+	font-family: monospace
+}
+</style>
+</head>
+<body>
+  <audio id="myAudio">
+  <source src="lose.mp3" type="audio/mpeg">
+  <source src="win.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <center><ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="inventions.html">Inventions</a></li>
+  <li><a href="ranks.html">Ranks</a></li>
+  <li class = "active"><a href="classes.html">Classes</a></li>
+  <li><a href="storetown.html">Storetown</a></li>
+  <li><a href="about.html">About</a></li>
+  <li id = "accountinfo"style="float: right;"><a href = "account.html"> Become a member</a></li>
+</ul>
+</center>
+<br>
+<br>
+<br>
+<br>
+ <center><h1> Welcome to the bronze math class!</h1>
+  <div class = "hr"></div>
+  <p> Over the course of several minutes, you will learn the basics of real and plant camp math.
+    <br>
+    <p>Let's begin! First, I will show you the addition sign +. It is used to add two values.<br>
+      There are 10 possible digits: 0,1,2,3,4,5,6,7,8, and 9, in ascending order. Let's say you have one apple. You add another apple and it becomes two! <br>
+      You can also add two apples and it becomes four!
+      Add three apples together and it becomes six!
+      See a pattern? When you increase each side of the apple chain, the total increases by 2!
+      <br>
+    The total has a = sign before it to declare the end of the equation, which is what a math sentence is called</p>
+      Try it out! Select the correct answer to 4+4 in the corresponding box
+      <select id = "mySelect">
+        <option value= "5">5</option>
+        <option value ="16">16</option>
+        <option value ="8" >8</option>
+        <option value = "Select">Select</option>
+      </select>
+  <button onclick = "verify()">Submit</button>
+  <br>
+  <p> But what if you need to add 2 and 1? You can use counting to solve that! You start at 2 and move 1 step forward to get to 3!<br>
+  You can also do this with higher numbers. Start at 3 and move 4 steps forward to get to 7. This is 3+4. Solve 4+6</p>
+  <input id = "a"><button onclick = "verif()">Submit</button>
+
+  <script type="text/javascript">
+    function verify(){
+      if (document.getElementById("mySelect").value == "8"){
+
+       var x = document.createElement("P");
+    var t = document.createTextNode("Correct!");
+    x.appendChild(t);
+    document.body.appendChild(x);;
+    }
+    else{
+        var x = document.createElement("P");
+    var t = document.createTextNode("Wrong!");
+    x.appendChild(t);
+    document.body.appendChild(x);;
+    }
+    }
+    function verif(){
+      if (document.getElementById("a").value == "10"){
+
+       var x = document.createElement("P");
+    var t = document.createTextNode("Correct!");
+    x.appendChild(t);
+    document.body.appendChild(x);;
+    }
+    else{
+        var x = document.createElement("P");
+    var t = document.createTextNode("Wrong!");
+    x.appendChild(t);
+    document.body.appendChild(x);;
+    }
+    }
+  </script>

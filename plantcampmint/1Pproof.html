@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>The Plant Camp Professor Site</title>
+<link rel='icon' href='resources/favicon.ico' type='image/x-icon'/ >
+ <meta charset="UTF-8"> 
+ <style> 
+ body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+body{
+	background-color: lightgreen
+
+}
+#footer {
+      bottom: 1px;
+      position: absolute;
+      text-align: center;
+}
+#footer div {
+      height: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      width: 100px;
+}
+#noprint{
+  visibility: show;
+}
+.hr{
+	background-color: #000000;
+
+	border: 1px solid #000000;
+
+	height: 5px;
+
+	margin: 10px 0;
+
+	width: 760px;
+
+	}
+
+p{
+	font-family: monospace;
+}
+
+h1{
+	font-size: 3em
+	font-family: monospace
+}
+</style>
+</head>
+<body>
+  <div id = "noprint">
+  <center><ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="inventions.html">Inventions</a></li>
+  <li><a href="ranks.html">Ranks</a></li>
+  <li><a href="classes.html">Classes</a></li>
+  <li><a href="storetown.html">Storetown</a></li>
+  <li><a href="about.html">About</a></li>
+  <li id = "accountinfo"style="float: right;"><a href = "account.html" id = "account"> Become a member</a></li>
+</ul>
+</center>
+<br>
+<br>
+<br>
+<br>
+<center>
+	<img src = "file:///Volumes/MacEvo/Users/Justin/Documents/Site/resources/PCM.png">
+	<h1>1 Dollar Proof Coin</h1>
+  <img src = "file:///Volumes/MacEvo/Users/Justin/Documents/Site/resources/1Pproof.JPG">
+  <p>The proof 1 dollar coin starts out the same way as normal circulating coins, but after they are baked, an inspector hand-picks the best coins. Those coins are then hand coated with nail polish, to give it a soft, shiny appearance. These coins are then packed up in a high-quality plant holder and sold. These pieces are legal tender for face value.</p>
+  <h2>5₽</h2>
+  <button onclick = "buy()">Buy Now</button></center></div>
+  <img id = "qrcode" style = "float:center">
+   <script>
+    if (localStorage.getItem("username") != null){
+      document.getElementById("account").innerHTML = localStorage.getItem("username");
+
+    }
+    function buy() {
+      if (localStorage.getItem("username") != null){
+      if (localStorage.getItem("bucks") >= 5){
+        var c = confirm("Are you sure you want to buy it?")
+        if (c == true){
+          document.getElementById("noprint").style.visibility = "hidden";
+          document.body.style.backgroundColor = "white";
+          window.print();
+          document.getElementById("qrcode").src = "https://api.qrserver.com/v1/create-qr-code/?data=" + btoa(Date())+  window.btoa("1 proof plant dollar coin") + '&amp;size=50x50';
+        localStorage.setItem("bucks", localStorage.getItem("bucks") - 5)
+        alert("Thank you for buying! Pick it up at the Plant camp Mint.")}
+      }
+      else{
+        alert("You only have " + localStorage.getItem("bucks")+" plant bucks. Earn some more before buying this product.")
+      }
+    }
+    else{
+      alert('You do not have an account.')
+    }
+    }
+</script>

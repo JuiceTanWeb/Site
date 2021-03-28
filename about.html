@@ -1,0 +1,193 @@
+<html>
+<head>
+<title>The Plant Camp Professor Site</title>
+
+<link rel='icon' href='resources/favicon.ico' type='image/x-icon' >
+
+ <meta charset="UTF-8"> 
+ <style> 
+ body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+body{
+	background-color: lightgreen
+
+}
+#footer {
+      bottom: 1px;
+      position: absolute;
+      text-align: center;
+}
+#footer div {
+      height: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      width: 100px;
+}
+
+.hr{
+	background-color: #000000;
+
+	border: 1px solid #000000;
+
+	height: 5px;
+
+	margin: 10px 0;
+
+	width: 760px;
+
+	}
+
+p{
+	font-family: monospace;
+}
+
+button{
+	padding: 25px 50px 25px 50px
+	color: yellow;
+ border: 1px solid #000000;
+  background-color: #FFE35A;
+}
+h1{
+	font-size: 6em;
+	font-family: monospace
+}
+.button {
+    background-color: #FFE35A; /* Green */
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid   #8C7853;
+}
+
+.button1:hover {
+    background-color:   #8C7853;
+    color: black;
+}
+</style>
+</head>
+<body>
+  <center><ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="inventions.html">Inventions</a></li>
+  <li><a href="ranks.html">Ranks</a></li>
+  <li><a href="classes.html">Classes</a></li>
+  <li><a href="storetown.html">Storetown</a></li>
+  <li class = "active"><a href="about.html">About</a></li>
+  <li id = "accountinfo" style="float: right;"><a href = "account.html"> Become a member</a></li>
+</ul>
+</center>
+<br>
+<br>
+<br>
+<br>
+<center><h1>This is Plant Camp!</h1>
+<div class = "hr"></div>
+<p> Plant camp is a group of dedicated plant witches. They dedicate their time to preserve the beautification of nature. They also want education for everyone. </p>
+ <br>
+ <div class="hr"></div>
+ <p> Over the course of several years, Plant Camp has done these things</p>
+ <br>
+ <h1>50</h1><p>unsucessful ufo attacks against us.</p>
+ <img src = "resources/ufo.png">
+ <br>
+ <h1>7</h1>
+ <p>Sucessful stores in plant camp</p>
+  <br>
+ <h1>15</h1>
+ <p>Books written here</p>
+ <h1>2</h1>
+ <p>Communication systems </p>
+ <h1>Our Currency</h1>
+ <p>Our currency is the plant camp dollar. Use our tool here to exchance a currency to the plant camp dollar.</p>
+ <h2><input id = "number"> plant camp dollar
+  <br>
+  =
+</h2>
+<h2 id = "output"></h2>
+  <select id = "currency">
+    <option value = 0.01162790698>USD</option>
+    <option value = 99.15734>Monslunch Boogers</option>
+    <option value = 1.8214978>Cornstalk Stalks</option>
+    <option value = 0.55457>Gates Gates</option>
+    <option value = 0.598753>Music Notes</option>
+    <option value= 0.0147284>Oceanpearl Rupees</option>
+    <option value = 0.01097645>Aqua Gems</option>
+    <option value = 0.00971>Little State Dollars</option>
+  </select>
+  
+  <a class = "button button1" onclick = "convert()">Calculate</a>
+  <br>
+  <input id = "input">
+    <select id = "currency1">
+    <option value = 86>USD</option>
+    <option value = 0.01008498211>Monslunch Boogers</option>
+    <option value = 0.54899874159>Cornstalk Stalks</option>
+    <option value = 1.8031988748>Gates Gates</option>
+    <option value = 1.67013776966>Music Notes</option>
+    <option value= 67.89603758725>Oceanpearl Rupees</option>
+    <option value = 91.10413658332>Aqua Gems</option>
+    <option value = 102.98661174047>Little State Dollars</option>
+  </select>
+  <a class = "button button1" onclick = "convert1()">Calculate</a>
+    <br>
+    <h2>=</h2>
+    <h2 id = "out"></h2><h2>Plant Camp Dollars</h2>
+  <script>
+    function convert(){
+      var output = document.getElementById("output")
+      var number = document.getElementById("number").value
+      var conversionRate = document.getElementById("currency").value
+      var convertedCurrency = Math.round(100*(number * conversionRate))/100;
+        output.innerHTML = convertedCurrency;
+      }
+        function convert1() {
+          var output = document.getElementById("out")
+      var number = document.getElementById("input").value
+      var conversionRate = document.getElementById("currency1").value
+      var convertedCurrency = Math.round(100*(number * conversionRate))/100;
+        output.innerHTML = convertedCurrency;}
+        
+      </script></center></body></html>

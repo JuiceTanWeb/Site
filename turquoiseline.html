@@ -1,0 +1,30 @@
+<html>
+<head>
+	<style>
+		body{
+			background-color: lightblue;
+		}
+		h1{
+	font-size: 3em
+	font-family: monospace
+}
+	</style>
+  <audio id = "Zline" src = "resources/metroZline.wav"></audio></head>
+	<body>
+	<center>	<img src = "resources/metro.png">
+	
+			<h1>Z Line</h1>
+			<br>
+<h1>To Mining Station</h1>
+<br>
+<h1>Via Succulent Central</h1>
+<h1 id = "time">ERROR</h1>
+</center></body>
+<script>
+
+	var timeminutes = 0
+	var timeseconds = 5
+	var Zlinemusic = document.getElementById("Zline")
+	var display = document.getElementById("time")
+	window.setInterval(function() {if (timeminutes == 0 && timeseconds==0){ display.innerHTML = "Train Approaching"; Zlinemusic.play();setTimeout(function(){Zlinemusic.pause();timeminutes = 5;},27000) 
+} else{if (timeseconds>= 1){timeseconds = timeseconds - 1;}else{timeminutes = timeminutes - 1; timeseconds = timeseconds = 59;}}document.getElementById("time").innerHTML = timeminutes + " minutes " + timeseconds+ " seconds"}, 1000);</script></html>

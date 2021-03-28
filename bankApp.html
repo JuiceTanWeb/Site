@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>The Plant Camp Professor Site</title>
+<link rel='icon' href='resources/favicon.ico' type='image/x-icon' >
+
+ <meta charset="UTF-8"> 
+ <style> 
+ body {margin:0;}
+ #nonprint{
+  visibility: visible;
+ }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+body{
+	background-color: lightgreen
+
+}
+#footer {
+      bottom: 1px;
+      position: absolute;
+      text-align: center;
+}
+#footer div {
+      height: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      width: 100px;
+}
+
+.hr{
+	background-color: #000000;
+
+	border: 1px solid #000000;
+
+	height: 5px;
+
+	margin: 10px 0;
+
+	width: 760px;
+
+	}
+
+p{
+	font-family: monospace;
+}
+
+
+h1{
+	font-size: 3em;
+	font-family: monospace;
+}
+</style>
+</head>
+<body>
+ <div id = "nonprint"> <center><ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="inventions.html">Inventions</a></li>
+  <li><a href="ranks.html">Ranks</a></li>
+  <li><a href="classes.html">Classes</a></li>
+  <li class="active"><a href="storetown.html">Storetown</a></li>
+  <li><a href="about.html">About</a></li>
+  <li id = "accountinfo"style="float: right;"><a href = "account.html"> Become a member</a></li>
+</ul>
+</center>
+<br>
+<br>
+<br>
+<br>
+<center><h1>Enter amount here.</h1>
+  <input id = "amount">
+ 
+  <button onclick = "changeqrcode()" height = "50">Submit</button></div></center>
+  <image id = "qrcode" style= "float:center;">
+  <script>
+  function changeqrcode(){
+    var amount = document.getElementById("amount").value;
+    document.getElementById("qrcode").src = "https://api.qrserver.com/v1/create-qr-code/?data=" + window.btoa(amount) + '&amp;size=50x50';
+    document.getElementById("nonprint").style.visibility = "hidden";
+    document.body.style.backgroundColor = "white";
+    window.print();
+  }
+</script></image></center></body></html>
